@@ -1,0 +1,9 @@
+--- 
+- name: Sample Playbook
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Print a message
+      debug:
+        msg: "Hello, World!"
