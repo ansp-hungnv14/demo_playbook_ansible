@@ -1,0 +1,16 @@
+- name : Get the secret from vault
+  hosts: 127.0.0.1
+  tasks:
+    - name: Read secret from vault via remote host and print it
+      community.hashi_vault.vault_kv2_get:
+        url: "http://127.0.0.1:8200"
+        engine_mount_point: "secret"
+        path: "path-test"
+        namespace: "default"
+        auth_method: "token"
+        token: "hvs.yxpsB84Y1QRNaRfJcUVYo5wZ"
+      register: vault_secret
+
+    - name: Print the secret
+      debug:
+        var: vault_secret.data
