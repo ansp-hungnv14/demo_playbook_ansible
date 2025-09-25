@@ -8,7 +8,6 @@
         path: "path-test"
         namespace: "default"
         auth_method: "token"
-        token: "hvs.yxpsB84Y1QRNaRfJcUVYo5wZ"
       register: vault_secret
 
     - name: Print the secret
